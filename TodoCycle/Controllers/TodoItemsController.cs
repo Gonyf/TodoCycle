@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TodoCycle.Models;
+using TodoCycle.Models.DB;
 using TodoCycle.Models.DB.Contexts;
 
 namespace TodoCycle.Controllers
@@ -25,7 +23,7 @@ namespace TodoCycle.Controllers
         // GET: api/TodoItems
         [HttpGet]
         [Authorize]
-        public async Task<ActionResult<IEnumerable<TodoItem>>> GettodoItems()
+        public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
         {
             return await _context.TodoItems.ToListAsync();
         }
