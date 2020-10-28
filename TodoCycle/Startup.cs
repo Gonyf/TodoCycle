@@ -46,6 +46,7 @@ namespace TodoCycle
 			services.AddScoped<IAuthRepository, AuthRepository>();
 
 			services.AddControllers();
+			services.AddMvcCore().AddRazorViewEngine();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,6 +60,7 @@ namespace TodoCycle
 			}
 
 			app.UseHttpsRedirection();
+
 
 			app.UseRouting();
 

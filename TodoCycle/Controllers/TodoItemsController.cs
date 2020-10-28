@@ -22,7 +22,6 @@ namespace TodoCycle.Controllers
 
         // GET: api/TodoItems
         [HttpGet]
-        [Authorize]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
         {
             return await _context.TodoItems.ToListAsync();
